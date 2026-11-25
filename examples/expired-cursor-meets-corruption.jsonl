@@ -1,0 +1,11 @@
+{"at":0,"kind":"append","record":{"partition":"b","id":"f","text":"blue"}}
+{"at":1,"kind":"durable","record":{"partition":"b","through":1}}
+{"at":2,"kind":"seal","record":{"partition":"b","segment":"b1","span":[1,1]}}
+{"at":3,"kind":"copy","record":{"segment":"b1","records":[[1,"blue"]]}}
+{"at":4,"kind":"reader","record":{"client":"r","partition":"b","next":1,"valid_until":9}}
+{"at":5,"kind":"fault","record":{"segment":"b1"}}
+{"at":6,"kind":"read","record":{"client":"r","limit":2}}
+{"at":7,"kind":"expire","record":{"partition":"b","through":1}}
+{"at":10,"kind":"expire","record":{"partition":"b","through":1}}
+{"at":11,"kind":"reader","record":{"client":"new","partition":"b","next":1,"valid_until":20}}
+{"at":12,"kind":"inspect","record":{"partition":"b"}}

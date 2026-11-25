@@ -1,0 +1,15 @@
+{"at":0,"kind":"append","record":{"partition":"a","id":"x","text":"first"}}
+{"at":1,"kind":"append","record":{"partition":"a","id":"y","text":"second"}}
+{"at":2,"kind":"durable","record":{"partition":"a","through":2}}
+{"at":3,"kind":"seal","record":{"partition":"a","segment":"a1","span":[1,2]}}
+{"at":4,"kind":"reader","record":{"client":"r","partition":"a","next":1,"valid_until":16}}
+{"at":5,"kind":"read","record":{"client":"r","limit":1}}
+{"at":6,"kind":"copy","record":{"segment":"a1","records":[[1,"first"]]}}
+{"at":7,"kind":"evict","record":{"segment":"a1"}}
+{"at":8,"kind":"append","record":{"partition":"a","id":"z","text":"next"}}
+{"at":9,"kind":"copy","record":{"segment":"a1","records":[[1,"first"],[2,"second"]]}}
+{"at":10,"kind":"restart","record":{}}
+{"at":11,"kind":"evict","record":{"segment":"a1"}}
+{"at":12,"kind":"read","record":{"client":"r","limit":1}}
+{"at":13,"kind":"ack","record":{"client":"r","through":1}}
+{"at":14,"kind":"read","record":{"client":"r","limit":3}}
